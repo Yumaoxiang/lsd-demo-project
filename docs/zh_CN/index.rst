@@ -43,9 +43,5 @@
    hardware/index
    software/index
    drivers_and_tools/index
-   get-started/index
-   api-reference/index
-   api-guides/index
-   markdown-examples/index
    about
    languages
