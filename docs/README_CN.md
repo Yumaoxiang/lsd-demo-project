@@ -1,6 +1,9 @@
-# Documentation Template
+# 文档模板
+
+基于 ESP-IDF 文档结构的可复用 Sphinx 文档模板，支持中英文国际化 (i18n)。
 
 ## 功能特性
+
 - **Sphinx**: 使用标准 Sphinx 构建系统
 - **国际化 (i18n)**: 内置中英文支持，可轻松切换语言
 - **开箱即用**: 修改内容即可发布文档
@@ -85,8 +88,8 @@ docs/
 ├── build_dist.sh               # 部署构建脚本
 ├── conf_common.py              # 通用 Sphinx 配置
 ├── requirements.txt            # Python 依赖
-├── README.md                   # 本文档（英文）
-├── README_CN.md                # 中文 README
+├── README.md                   # 英文说明
+├── README_CN.md                # 中文说明（本文件）
 ├── page_redirects.txt          # 页面重定向配置
 ├── _static/                    # 静态资源
 │   ├── css/
@@ -121,7 +124,7 @@ docs/
 - **languages**: 支持的语言列表
 - **html_static_path**: 静态文件路径
 
-### 语言特定配置
+### 语言特定的 conf.py
 
 每个语言目录的 `conf.py`：
 
