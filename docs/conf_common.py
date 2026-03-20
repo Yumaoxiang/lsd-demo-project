@@ -101,6 +101,13 @@ github_version = "main"
 # Using sphinx_rtd_theme or sphinx_idf_theme
 html_theme = "sphinx_rtd_theme"  # or 'sphinx_idf_theme' if available
 
+# 添加以下内容来限制侧边栏深度
+html_theme_options = {
+    'collapse_navigation': True, 
+    'navigation_depth': 1,      # 强制只显示一级目录（文件名）
+    'titles_only': True,        # 侧边栏仅显示文档标题
+}
+
 # For better nginx deployment
 html_extra_path = []  # Additional files to copy to output directory
 
