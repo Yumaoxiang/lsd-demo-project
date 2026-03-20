@@ -7,5 +7,6 @@
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
 
    Lierda 蜂窝固件烧录工具使用指导_Rev1.0
