@@ -7,5 +7,6 @@
 
 .. toctree::
    :maxdepth: 1
+   :titlesonly:
 
    Lierda LTE-EC71X OpenCPU APP全量升级开发指导_Rev1.0
