@@ -17,7 +17,7 @@ IMAGE_EXTENSIONS = {
     ".tiff",
 }
 
-MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[[^\]]+\.png\]\((.*?)\)", re.IGNORECASE)
+MARKDOWN_IMAGE_PATTERN = re.compile(r"!\[(?:[^\]]+\.png)?\]\((.*?)\)", re.IGNORECASE)
 
 
 def natural_sort_key(text: str):
@@ -70,7 +70,7 @@ def replace_markdown_images(content: str, renamed_paths, replace_count: int):
             return match.group(0)
         new_name = renamed_names[index]
         index += 1
-        return f"![]({new_name})"
+        return f"![](./_images/{new_name})"
 
     updated_content = MARKDOWN_IMAGE_PATTERN.sub(replacer, content)
     return updated_content, index
@@ -94,7 +94,7 @@ def process_images_and_markdown(folder_path: str, base_name: str, markdown_path:
     markdown_content = markdown_file.read_text(encoding="utf-8")
     matches = list(MARKDOWN_IMAGE_PATTERN.finditer(markdown_content))
     if not matches:
-        raise ValueError("Markdown 中没有找到符合规则的图片标记，格式应为 ![任意名称.png](xxx)。")
+        raise ValueError("Markdown 中没有找到符合规则的图片标记，格式应为 ![任意名称.png](xxx) 或 ![](xxx)。")
 
     image_count = len(image_files)
     markdown_count = len(matches)
@@ -167,8 +167,8 @@ class ImageRenamerApp:
             text=(
                 "处理规则：\n"
                 "1. 按文件名自然排序重命名图片，例如 名称1.png、名称2.jpg\n"
-                "2. 从上到下扫描 Markdown 中 [] 内为 .png 文件名的图片标记\n"
-                "3. 依次替换为重命名后的图片名，格式改为 ![](新图片名)\n"
+                "2. 从上到下扫描 Markdown 中 ![任意名称.png](xxx) 或 ![](xxx)\n"
+                "3. 依次替换为重命名后的图片名，格式改为 ![](./_images/新图片名)\n"
                 "4. 修改 Markdown 前会自动生成同目录备份文件 .md.bak"
             ),
             justify="left",
