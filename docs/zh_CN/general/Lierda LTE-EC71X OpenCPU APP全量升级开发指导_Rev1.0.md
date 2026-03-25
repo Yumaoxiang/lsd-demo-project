@@ -14,17 +14,17 @@
 
 默认SDK不会进行APP 全量升级包的输出，需要修改Makefile中BUILD\_COMP\_OTA\_EN=y 打开此宏后，编译会自动输出APP的升级包AppOTA.bin，修改方式如下图所示。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/1d3a7e94-e0f2-4d6b-9be6-b3fdf6664860.png)
+![](APP全量升级1.png)
 
 如下图所示：AppOTA.bin就是APP镜像的OTA升级包。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/38ac8f35-e97d-41dc-8a03-06e0b72d96df.png)
+![](APP全量升级2.png)
 
 APP全量升级原理说明
 
 升级的执行流程在bootloader阶段，这样在升级过程中异常掉电，系统启动后还会继续进行APP的升级，保证升级掉电系统不变砖。
 
-![相关流程图-流程图.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/47415a53-df14-41ed-a528-820aca82dbc5.png)
+![](APP全量升级3.png)
 
 完整升级流程
 
@@ -148,29 +148,29 @@ demo中循环进行固定文件名(upgrade.bin)的升级包的检测，
 
 1.测试请开启该demo
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/b18c8d14-4655-4fb7-bea6-bda08a44f59f.png)
+![](APP全量升级4.png)
 
 2.导出时的文件系统地址查看方式：
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/03924c69-5580-42d7-b389-4b0885ab6201.png)
+![](APP全量升级5.png)
 
 3.导出文件系后将AppOTA.bin写入文件系统。
 
 工具链接：[请至钉钉文档查看附件《文件系统读写工具》](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuv4lg7Qo86zbX04v?iframeQuery=anchorId%3DX02mm91i4o8sjqtr6w3ui)
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/3d566ba4-0dfc-4dfa-ac76-ef74a3d82e75.png)
+![](APP全量升级6.png)
 
 4.将新的文件系统bin烧录到系统中。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/9007e695-72b1-4766-9296-790be6e5728f.png)
+![](APP全量升级7.png)
 
 5.复位设备进行包检查。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/bb14b436-4c5f-43f0-a3b1-f8afc0c7fdb8.png)
+![](APP全量升级8.png)
 
 6.debug口日志，提示升级成功。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/6436cf4e-9565-4901-8f79-2d34cc92f3a9.png)
+![](APP全量升级9.png)
 
 # 5 常见问题
 
@@ -178,7 +178,7 @@ demo中循环进行固定文件名(upgrade.bin)的升级包的检测，
 
 2、APP镜像有大小上限，如果代码较多，APP空间不够，则需要联系FAE反馈内部进行底包分区的重新划分。下图可以查看当前底包对应APP分区上限大小。
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5jmDrMAKlJb/img/b51dcc1f-6d4f-4384-b2ef-faf4e2b0ce9c.png)
+![](APP全量升级10.png)
 
 3、再制作包的时候就保证了APP镜像大小的上限，超出会提前预警
 
