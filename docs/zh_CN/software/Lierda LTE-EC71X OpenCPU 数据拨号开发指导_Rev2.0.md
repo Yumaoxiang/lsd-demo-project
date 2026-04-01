@@ -1,6 +1,6 @@
 # Lierda LTE-EC71X OpenCPU 数据拨号开发指导\_Rev2.0
 
-# 文件修订历史
+## 文件修订历史
 
 | **版本** | **日期** | **作者** | **修订内容** |
 | --- | --- | --- | --- |
@@ -11,7 +11,7 @@
 | Rev1.4 | 26-01-09 | ZLC | 增加4.16章节，新增接口。 |
 | Rev2.0 | 26-03-03 | YMX | 修改文档格式 |
 
-# 1 简介
+## 1 简介
 
 本文档主要介绍 LTE-EC71X OpenCPU 数据拨号 API 函数详解，API 位于\PLAT\middleware\lierda\_open\lierda\_api\liot\_nw\inc\liot\_datacall.h 文件。
 
@@ -24,9 +24,9 @@
 
 新增
 
-# 2 API 函数概览
+## 2 API 函数概览
 
-## 2.1 核心控制
+### 2.1 核心控制
 
 | **函数** | **说明** |
 | --- | --- |
@@ -35,7 +35,7 @@
 | [liot\_set\_data\_call\_asyn\_mode()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmy9p4eihd5eite) | 设置启动和终止数据拨号函数的执行模式 |
 | [liot\_datacall\_set\_nat()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmyaj90q38qajs5) | 启用 NAT 功能 |
 
-## 2.2 状态查询
+### 2.2 状态查询
 
 | **函数** | **说明** |
 | --- | --- |
@@ -47,7 +47,7 @@
 | [liot\_datacall\_get\_nat()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmyakk3yl6y0t0r) | 查询(U)SIM 卡对应的 NAT模式 |
 | [Liot\_DataCallCfgDefaultEpsBearer()](https://alidocs.dingtalk.com/i/nodes/MyQA2dXW7e7kn7ZLfpLr6reRJzlwrZgb?utm_scene=team_space&iframeQuery=anchorId%3Duu_mk6laxbges3z8sehxcw) | 设置或查询默认承载（CID 1）的 APN 和 IP 类型 |
 
-## 2.3 事件处理
+### 2.3 事件处理
 
 | **函数** | **说明** |
 | --- | --- |
@@ -55,7 +55,7 @@
 | [liot\_datacall\_unregister\_cb()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmy58gyeu5iktte) | 去注册数据拨号的回调函数 |
 | [Liot\_PsEventCb()](https://alidocs.dingtalk.com/i/nodes/MyQA2dXW7e7kn7ZLfpLr6reRJzlwrZgb?utm_scene=team_space&iframeQuery=anchorId%3Duu_mk6kgot4vwatib9xpsm) | 注册系统事件通知回调。 |
 
-## 2.4 IP地址工具
+### 2.4 IP地址工具
 
 | **函数** | **说明** |
 | --- | --- |
@@ -64,9 +64,9 @@
 | [liot\_ip4addr\_aton()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmyb2h5pirf174q) | IPV4字符串转地址 |
 | [liot\_ip6addr\_aton()](https://alidocs.dingtalk.com/i/nodes/G53mjyd80p7vr7OLuXe1XXn586zbX04v?utm_scene=team_space&iframeQuery=anchorId%3Duu_m05cnmyb5xf6ko5tnof) | IPV6字符串转地址 |
 
-# 3 API 函数详解
+## 3 API 函数详解
 
-## 3.1 liot\_datacall\_register\_cb
+### 3.1 liot\_datacall\_register\_cb
 
 该函数用于注册数据拨号的回调函数。无论是异步模式还是同步模式，均需注册回调函数用于上报被网络去激活或者去附着的事件，当接收到此事件后可发起重新拨号流程。
 
@@ -99,7 +99,7 @@
 
 详见第 [4.1.2](https://lierda.feishu.cn/docx/VB8ndMgiAotqJ3xjEgicmMpanud?contentTheme=DARK&amp;theme=LIGHT#ARm3dgj7bohdakxsTugccXUkn1c) 章。
 
-### 3.1.1 liot\_datacall\_callback
+#### 3.1.1 liot\_datacall\_callback
 
 该回调函数用于上报数据拨号事件。
 
@@ -138,7 +138,7 @@ ctx：
 
 \[In\] 回调函数的传参指针。
 
-### 3.1.2 liot\_datacall\_errcode\_e
+#### 3.1.2 liot\_datacall\_errcode\_e
 
 数据拨号 API 执行结果错误码。
 
@@ -204,7 +204,7 @@ ctx：
 | LIOT\_DATACALL\_NO\_DFTPDN\_CFG\_CONTEXT | 未配置默认承载上下文 |
 | LIOT\_DATACALL\_NO\_DFTPDN\_INFO\_CONTEXT | 无默认承载上下文信息 |
 
-## 3.2 liot\_datacall\_unregister\_cb
+### 3.2 liot\_datacall\_unregister\_cb
 
 该函数用于取消通过 liot\_datacall\_register\_cb() 注册的回调函数。取消后，回调函数将不再接收数据拨号的相关事件。
 
@@ -417,7 +417,7 @@ ctx：
 | --- | --- | --- |
 | addr | UINT32 | IPv6 地址，大小为4字节。 |
 
-## 3.4 liot\_start\_data\_call
+### 3.4 liot\_start\_data\_call
 
 该函数用于启动数据拨号。默认为同步模式，如需异步模式请通过 liot\_set\_data\_call\_asyn\_mode() 进行设置。同步模式和异步模式区别如下所示：
 
@@ -942,20 +942,20 @@ ctx：
 | LIOT\_PS\_PDN\_TYPE\_IP\_V4V6 | IPv4/IPv6 双栈类型 |
 | LIOT\_PS\_PDN\_TYPE\_NUM | IP 类型数量（用作计数） |
 
-# 4 代码示例
+## 4 代码示例
 
 示例代码参考 \PLAT\project\ec7xx\_0h00\ap\apps\lierda\_app\lierda\_examples\liot\_datacall\_demo.c 文件。如下运行结果则说明获取所有信息正常：
 
 *   同步模式
     
-    ![Drawing 0](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwj1Zprmqpz2/img/98ee7ad6-fb9b-4617-b544-230d4b5fad5b.jpeg)
+    ![](_images/数据拨号开发指导/数据拨号1.png)
     
 *   异步模式
     
 
-![Drawing 1](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwj1Zprmqpz2/img/2f04f629-2060-46cb-a061-655f04e2999e.jpeg)
+![](_images/数据拨号开发指导/数据拨号2.png)
 
-# 5 名词解释
+## 5 名词解释
 
 *   **PDN Context**：Packet Data Network Context 是模组与运营商网络建立数据通道的逻辑实体。
     

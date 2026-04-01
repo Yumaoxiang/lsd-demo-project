@@ -1,12 +1,12 @@
 # Lierda LTE-EC71X OpenCPU APP全量升级开发指导\_Rev1.0
 
-# 文件修订历史
+## 文件修订历史
 
 | **文档版本** | **变更日期** | **修订人** | **审核人** | **变更内容** |
 | --- | --- | --- | --- | --- |
 | Rev1.0 | 26-02-28 | zlc | ymx | 初始文档 |
 
-# 1 简介
+## 1 简介
 
 本章节主要内容主要介绍客户在使用底包分离方案SDK时，全量升级用户APP分区的方法，指导客户快速输出APP镜像的升级包，并完成APP分区镜像的升级。
 
@@ -33,15 +33,15 @@ APP全量升级原理说明
 | APP阶段：主要是下载升级包到文件系统，调用Liot\_FotaAppUpgradeCheck()接口进行升级包的完整性校验。然后复位模组。<br>Bootloader阶段：挂载文件系统，如果文件系统中存在AppOTA.bin升级文件，则开始进行读取升级文件中的镜像内容，擦除并更新APP分区。更新结束后会进行继续启动系统。<br>升级包需要放在文件系统中，底包会预留足够空间，用户无需关注。 |
 | --- |
 
-# 2 API 函数概览
+## 2 API 函数概览
 
 | **函数** | **说明** |
 | --- | --- |
 | Liot\_FotaAppUpgradeCheck | 全量升级APP分区升级包检测接口 |
 
-# 3 API函数详解
+## 3 API函数详解
 
-## 3.1 liot\_fota\_errcode\_e
+### 3.1 liot\_fota\_errcode\_e
 
 FOTA 错误码由相关的组件 ID 与标准错误码共同组成，其中组件 ID 为高 16 位，标准错误码为低 16位。
 
@@ -87,7 +87,7 @@ typedef enum{
 | LIOT\_FOTA\_UPGRADE\_POINT\_NULL\_ERR | 指针为空 |
 | LIOT\_FOTA\_UPGRADE\_FLAG\_SET\_ERR | 标志位设置错误 |
 
-## 3.2 Liot\_FotaAppUpgradeCheck
+### 3.2 Liot\_FotaAppUpgradeCheck
 
 该函数用于设置检查APP全量升级包是否合法，并再检测完成后自动重命名AppOTA.bin。自动重命名的原因是，升级流程发生在bootloader阶段，会自动挂载文件系统，然后索引AppOTA.bin文件进行升级。
 
@@ -133,7 +133,7 @@ LIOT\_FOTA\_UPGRADE\_MD5\_FAIL 升级包MD5校验失败。
 
 LIOT\_FOTA\_UPGRADE\_SUCCESS  升级包校验成功。
 
-# 4 代码示例
+## 4 代码示例
 
 示例代码参考 LSDK/example/src/demo\_app\_fota.c。
 
@@ -172,7 +172,7 @@ demo中循环进行固定文件名(upgrade.bin)的升级包的检测，
 
 ![](./_images/APP全量升级9.png)
 
-# 5 常见问题
+## 5 常见问题
 
 1、再测试过程中文件系统的地址根据底包决定，请根据实际用到的底包进行选择。
 
