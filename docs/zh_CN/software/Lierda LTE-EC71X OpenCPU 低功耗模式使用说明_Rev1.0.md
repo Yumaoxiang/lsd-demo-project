@@ -326,7 +326,7 @@ Liot_SleepTimerID_e Liot_SleepTimerGetID(void);
 
 *   Liot\_SleepTimerID\_e：唤醒系统的定时器ID。
     
-    # 5 代码示例
+## 5 代码示例
     
     示例代码参考  LSDK/example/src/demo\_sleepex.c。
     
@@ -340,6 +340,6 @@ Liot_SleepTimerID_e Liot_SleepTimerGetID(void);
     
     根据demo首先进入 LIOT\_SLEEP\_MODE\_DEEP\_LOW 低功耗模式，然后启动1分钟的低功耗定时器，唤醒后系统判断是否为低功耗定时器唤醒系统，然后退出休眠低功耗休眠模式。![](_images/低功耗模式使用说明/低功耗模式说明2.png)
     
-    # 6 常见问题
+## 6 常见问题
     
     *   对于LIOT\_SLEEP\_MODE\_DEEP\_LOW模式，当系统进入该模式之后，RAM会掉电，全局变量再系统唤醒后会被清零，如果需要保存关键数据，建议使用文件系统系统进行保存，再系统唤醒后再进行变量恢复。
