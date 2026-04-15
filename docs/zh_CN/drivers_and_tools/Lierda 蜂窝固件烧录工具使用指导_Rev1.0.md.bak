@@ -47,7 +47,7 @@
 
 工具界面分为四大功能区域：
 
-![](_images/烧录工具使用指导/固件烧录工具使用指导1.png)
+![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/731a5ddc-9126-487e-93ef-d5d43094b583.png)
 
 ### 3.1 文件选择区域
 
@@ -87,7 +87,7 @@
     *   确保模组对应的驱动已安装，设备管理器端口识别如下表示驱动安装成功。
         
 
-![](_images/烧录工具使用指导/固件烧录工具使用指导2.png)
+![d9b468c940e39c1ec68599ade0b94905.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/f1a2090e-2325-4965-9cc0-f6ca08372953.png)
 
 2.  **SDK包准备​：**
     
@@ -125,7 +125,7 @@
     *   编译失败：检查代码结构或依赖环境，参考日志及工具状态提示定位错误。
         
 
-![](_images/烧录工具使用指导/固件烧录工具使用指导3.png)
+![4ed72afdb46f2e7e86801d211ea0ca5b.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/73fe5970-f5e7-4ea9-b12d-1ced4eda6b89.png)
 
 ### 4.2 应用下载
 
@@ -133,7 +133,7 @@
     
     切下载模式：设备上电后拉高 BOOT 引脚并复位模组。Lierda QDLoader Port端口即为下载口。
     
-    ![](_images/烧录工具使用指导/固件烧录工具使用指导4.png)
+    ![f71bec9dfaa9560961069b45d77a6f21.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/11794859-b192-49f1-bed2-cf840d4ca80b.png)
     
 2.  点击“应用下载”按钮，工具将：
     
@@ -144,7 +144,7 @@
     *   下载完成后自动重启设备。
         
 
-![](_images/烧录工具使用指导/固件烧录工具使用指导5.png)
+![6e7b54ccf19db9e62e7ccdec3fe0cbd0.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/ce6b013e-bbf0-460a-9e25-c2e0ede16d74.png)
 
 ### 4.3 全量下载
 
@@ -159,7 +159,7 @@
     *   下载完成后自动重启设备。
         
 
-![](_images/烧录工具使用指导/固件烧录工具使用指导6.png)
+![187601d7e2797133be3fa80eeb61e2ad.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/8oLl952N9NKYelap/img/6ade52d8-0c4d-471e-bf6f-1694b77156d1.png)
 
 ## 5. 注意事项与常见问题
 
