@@ -1,20 +1,20 @@
 # Lierda LTE-EC71X OpenCPU 底包分离支持API文档\_Rev1.0
 
-# 修订记录
+## 修订记录
 
 | **文档版本** | **变更日期** | **修订人** | **审核人** | **变更内容** |
 | --- | --- | --- | --- | --- |
 | Rev1.0 | 26-03-13 | zlc |  | 新增文档 |
 
-# 1 引言
+## 1 引言
 
 本章节主要内容介绍Lierda LTE-EC71X OPENCPU 底包分离已经支持的利尔达自研功能API列表，其他平台支持不在该文档内说明，基于此文档，方便客户在进行功能开发时进行参考。
 
-# 2 API 功能说明
+## 2 API 功能说明
 
-## 2.1 基本信息 API
+### 2.1 基本信息 API
 
-### 2.1.1 Dev API 
+#### 2.1.1 Dev API 
 
 | **函数** | **说明** |
 | --- | --- |
@@ -37,7 +37,7 @@
 | Liot\_DevSetDnsServersAddr() | 设置主备DNS服务器地址 |
 | Liot\_DevGetDnsServersAddr() | 查询主备DNS服务器地址 |
 
-### 2.1.2 datacall API
+#### 2.1.2 datacall API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -45,7 +45,7 @@
 | Liot\_DataCallCfgDefaultEpsBearer() | 设置或查询默认承载（CID 1）的 APN 和 IP 类型 |
 | Liot\_PsEventCb() | 注册系统事件通知回调。 |
 
-### 2.1.3 SIM API
+#### 2.1.3 SIM API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -54,7 +54,7 @@
 | liot\_sim\_get\_phonenumber() | 获取 SIM 卡本机号码 |
 | liot\_sim\_get\_card\_status() | 获取 SIM 卡缓存状态信息 |
 
-### 2.1.4 NW API
+#### 2.1.4 NW API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -72,7 +72,7 @@
 | liot\_nw\_set\_ctzu\_switch() | 设置基站时间同步开关 |
 | liot\_nw\_get\_ctzu\_switch() | 获取基站时间同步开关状态 |
 
-### 2.1.5 SMS API
+#### 2.1.5 SMS API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -87,7 +87,7 @@
 | liot\_sms\_set\_storage() | 设置短信存储位置 |
 | liot\_sms\_get\_storage() | 获取短信存储位置 |
 
-### 2.1.6 Custom AT API
+#### 2.1.6 Custom AT API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -95,11 +95,11 @@
 | liot\_atcmd\_register() | 该函数用于注册AT table表。 |
 | liot\_atcmd\_reply() | 该指接口为AT的返回函数 |
 
-## 2.2 Driver API列表
+### 2.2 Driver API列表
 
-### 2.2.1 OS API
+#### 2.2.1 OS API
 
-#### 2.2.1.1 任务
+##### 2.2.1.1 任务
 
 | **函数** | **说明** |
 | --- | --- |
@@ -127,7 +127,7 @@
 | liot\_rtos\_is\_alive() | 判断任务是否处于运行态 |
 | liot\_rtos\_task\_create\_static() | 静态方式创建任务 |
 
-#### 2.2.1.2 临界区
+##### 2.2.1.2 临界区
 
 | **函数** | **说明** |
 | --- | --- |
@@ -136,7 +136,7 @@
 | liot\_rtos\_exit\_critical() | 退出临界区 |
 | liot\_rtos\_exit\_critical\_from\_isr() | 从中断中退出临界区 |
 
-#### 2.2.1.3 信号量
+##### 2.2.1.3 信号量
 
 | **函数** | **说明** |
 | --- | --- |
@@ -147,7 +147,7 @@
 | liot\_rtos\_semaphore\_get\_cnt() | 获取信号量值 |
 | liot\_rtos\_semaphore\_delete() | 删除信号量 |
 
-#### 2.2.1.4 互斥锁
+##### 2.2.1.4 互斥锁
 
 | **函数** | **说明** |
 | --- | --- |
@@ -157,7 +157,7 @@
 | liot\_rtos\_mutex\_unlock() | 释放互斥锁 |
 | liot\_rtos\_mutex\_delete() | 删除互斥锁 |
 
-#### 2.2.1.5 消息队列
+##### 2.2.1.5 消息队列
 
 | **函数** | **说明** |
 | --- | --- |
@@ -169,7 +169,7 @@
 | liot\_rtos\_queue\_reset() | 重置队列中的元素和更改队列长度 |
 | liot\_rtos\_queue\_get\_space() | 查询队列中可用空间数量 |
 
-#### 2.2.1.6 定时器
+##### 2.2.1.6 定时器
 
 | **函数** | **说明** |
 | --- | --- |
@@ -180,7 +180,7 @@
 | liot\_rtos\_timer\_delete() | 删除定时器 |
 | ### liot\_rtos\_timer\_stop\_isr() | 在中断中停止定时器 |
 
-#### 2.2.1.7 事件组
+##### 2.2.1.7 事件组
 
 | **函数** | **说明** |
 | --- | --- |
@@ -191,7 +191,7 @@
 | liot\_rtos\_flag\_clear | 清除事件组中的事件位 |
 | liot\_rtos\_flag\_delete | 删除事件组 |
 
-#### 2.2.1.8 PSRAM API
+##### 2.2.1.8 PSRAM API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -201,7 +201,7 @@
 | liot\_psram\_xPortGetTotalHeapSize | 用于PSRAM总的HEAP大小。 |
 | liot\_psram\_xPortGetFreeHeapSize | 用于获取PSRAM剩余可用内存大小。 |
 
-#### 2.2.1.9 其他
+##### 2.2.1.9 其他
 
 | **函数** | **说明** |
 | --- | --- |
@@ -211,7 +211,7 @@
 | liot\_rtos\_realloc | 重新分配内存 |
 | liot\_true\_rand | 硬件随机数 |
 
-### 2.2.2 UART API
+#### 2.2.2 UART API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -219,7 +219,7 @@
 | Liot\_UartDeinit | Uart 去初始化接口 |
 | Liot\_UartSend | Uart 发送接口 |
 
-### 2.2.3 USB API
+#### 2.2.3 USB API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -229,13 +229,13 @@
 | liot\_usb\_drv\_enable | 初始化 USB 驱动 |
 | liot\_usb\_drv\_disable | 去初始化 USB 驱动 |
 
-### 2.2.4 ADC API
+#### 2.2.4 ADC API
 
 | **函数** | **说明** |
 | --- | --- |
 | liot\_adc\_get\_volt\_raw | 读取 ADC 通道中的模拟电压值源数据 |
 
-### 2.2.5 GPIO API
+#### 2.2.5 GPIO API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -252,7 +252,7 @@
 | Liot\_WakeupIntDeinit | 去初始化 wakeup 引脚中断 |
 | Liot\_WakeupPadGetLevel | 获取wakeup 引脚电平 |
 
-### 2.2.6 PWM API
+#### 2.2.6 PWM API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -262,14 +262,14 @@
 | liot\_pwm\_disable() | 暂停 PWM 功能 |
 | liot\_pwm\_set\_duty\_cycle() | 设置PWM占空比 |
 
-### 2.2.7 APWM API
+#### 2.2.7 APWM API
 
 | **函数** | **说明** |
 | --- | --- |
 | Liot\_ApwmCfg() | 打开 PWM 功能 |
 | Liot\_ApwmEnable() | 关闭 PWM 功能 |
 
-### 2.2.8 I2C API
+#### 2.2.8 I2C API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -280,7 +280,7 @@
 | liot\_I2cWrite\_16bit\_addr() | 向 I2C 总线写入数据，从设备的寄存器地址长度为 16 位。 |
 | liot\_I2cRead\_16bit\_addr() | 从 I2C 总线读取数据，从设备的寄存器地址长度为 16 位。 |
 
-### 2.2.9 FLASH API
+#### 2.2.9 FLASH API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -288,7 +288,7 @@
 | liot\_flash\_read() | 从 flash 中读取数据。 |
 | liot\_flash\_write() | 向 flash 中写入数据。 |
 
-### 2.2.10 RTC API
+#### 2.2.10 RTC API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -305,7 +305,7 @@
 | liot\_rtc\_register\_cb() | 注册rtc alarm 回调函数 |
 | Liot\_GetTimestamp() | 获取rtc时间转换成毫秒数 |
 
-### 2.2.11 FS API
+#### 2.2.11 FS API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -330,7 +330,7 @@
 | liot\_fsync() | 同步文件数据。 |
 | liot\_internal\_fs\_free\_size\_get() | 获取文件系统剩余大小。 |
 
-### 2.2.12 NV API
+#### 2.2.12 NV API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -339,7 +339,7 @@
 | liot\_cust\_nvm\_fwrite() | 写入用户自定义简单配置文件 |
 | liot\_cust\_nvm\_fread() | 读取用户自定义简单配置文件 |
 
-### 2.2.13 低功耗相关
+#### 2.2.13 低功耗相关
 
 | **函数** | **说明** |
 | --- | --- |
@@ -349,7 +349,7 @@
 | Liot\_SleepTimerCheck() | 检测低功耗定时器是否在运行 |
 | Liot\_SleepTimerGetID() | 获取唤醒系统的低功耗ID |
 
-### 2.2.14 PowerKey API
+#### 2.2.14 PowerKey API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -362,7 +362,7 @@
 | liot\_set\_pwrkey\_pull() | 设置pwrkey上下拉 |
 | liot\_set\_pwrkey\_Init() | 设置pwrkey初始化状态 |
 
-### 2.2.15 GNSS API
+#### 2.2.15 GNSS API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -374,7 +374,7 @@
 | liot\_gnss\_get\_nmea() | 获取指令NMEA语句 |
 | liot\_gnss\_close\_backup\_power() | 关闭GNSS芯片备用电源 |
 
-### 2.2.16 SPI API
+#### 2.2.16 SPI API
 
 | liot\_spi\_init() | 该函数用于初始化 SPI |
 | --- | --- |
@@ -384,9 +384,9 @@
 | liot\_spi\_write() | 该函数用于设置通过 SPI 发送数据 |
 | liot\_spi\_release() | 该函数用于释放 SPI 总线 |
 
-## 2.3 应用协议 API
+### 2.3 应用协议 API
 
-### 2.3.1 HTTP API
+#### 2.3.1 HTTP API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -400,7 +400,7 @@
 | liot\_httpc\_is\_running() | 判断HTTP客户端是否处于运行态 |
 | liot\_httpc\_url\_parse() | 解析URL |
 
-### 2.3.2 SSL API
+#### 2.3.2 SSL API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -410,7 +410,7 @@
 | Liot\_SSLSocketGetStatus() | 查询SSL连接状态 |
 | Liot\_SSLSocketClose() | 关闭SSL连接 |
 
-### 2.3.3 MQTT API
+#### 2.3.3 MQTT API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -425,7 +425,7 @@
 | liot\_mqtt\_pingreq() | 发送ping消息 |
 | liot\_onenet\_generate\_auth\_token() | 获取onenet平台token |
 
-### 2.3.4 FTP API
+#### 2.3.4 FTP API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -446,25 +446,25 @@
 | liot\_ftp\_client\_rename() | 重命名文件 |
 | liot\_ftp\_client\_FileTpye() | 设置传输文件类型 |
 
-### 2.3.5 NTP API
+#### 2.3.5 NTP API
 
 | **函数** | **说明** |
 | --- | --- |
 | liot\_ntp\_sync() | 打开 NTP 同步时间的功能 |
 
-### 2.3.6 PING API
+#### 2.3.6 PING API
 
 | **函数** | **说明** |
 | --- | --- |
 | liot\_ping\_start() | 启用ping功能 |
 
-### 2.3.7 LBS API
+#### 2.3.7 LBS API
 
 | **函数** | **说明** |
 | --- | --- |
 | liot\_lbs\_get\_position() | 该函数用于请求获取定位信息。 |
 
-### 2.3.8 WifiScan API
+#### 2.3.8 WifiScan API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -475,7 +475,7 @@
 | liot\_wifiscan\_register\_cb() | 开始 Wi-Fi Scan 异步模式扫描 |
 | liot\_wifiscan\_async() | 注册回调函数 |
 
-### 2.3.9 FOTA API
+#### 2.3.9 FOTA API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -489,15 +489,15 @@
 | liot\_fota\_nvm\_free\_size\_get() | 用于获取fota分区大小 |
 | liot\_fota\_nvm\_image\_verify() | 用于校验fota分区中存储的升级包信息 |
 
-### 2.3.10 APP OTA API
+#### 2.3.10 APP OTA API
 
 | **函数** | **说明** |
 | --- | --- |
 | Liot\_FotaAppUpgradeCheck() | 全量升级APP分区升级包检测接口 |
 
-## 2.4 多媒体 API
+### 2.4 多媒体 API
 
-### 2.4.1 AUDIO API
+#### 2.4.1 AUDIO API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -512,7 +512,7 @@
 | Liot\_SoundPlayResume() | 播放恢复 |
 | Liot\_SoundPlayMp3File() | 播放 MP3 文件 |
 
-### 2.4.2 TTS API \*
+#### 2.4.2 TTS API \*
 
 | **函数** | **说明** |
 | --- | --- |
@@ -526,7 +526,7 @@
 | liot\_tts\_set\_resource() | 设定TTS资源 |
 | liot\_utf8\_to\_gbk\_str() | 将utf8编码字符串转成gbk编码字符串 |
 
-### 2.4.3 LCD API
+#### 2.4.3 LCD API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -543,14 +543,14 @@
 | liot\_lcd\_sleep\_in() | LCD进入休眠 |
 | liot\_lcd\_sleep\_out() | LCD退出休眠 |
 
-### 2.4.4 KeyPad API
+#### 2.4.4 KeyPad API
 
 | **函数** | **说明** |
 | --- | --- |
 | liot\_keypad\_init() | 初始化矩阵键盘 |
 | liot\_keypad\_state() | 获取矩阵键盘状态 |
 
-### 2.4.5 Camera API
+#### 2.4.5 Camera API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -560,7 +560,7 @@
 | liot\_CamPreview () | 打开摄像头在LCD屏幕上预览（暂不支持） |
 | liot\_CamStopPreview () | 打开摄像头在LCD屏幕上预览（暂不支持） |
 
-### 2.4.6 Decode API
+#### 2.4.6 Decode API
 
 | **函数** | **说明** |
 | --- | --- |
@@ -571,7 +571,7 @@
 | liot\_image\_decoder() | 解码照片 |
 | liot\_get\_decoder\_result() | 获取解码结果 |
 
-### 2.4.7 Volte API
+#### 2.4.7 Volte API
 
 | **函数** | **说明** |
 | --- | --- |
